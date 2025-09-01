@@ -41,8 +41,6 @@ app.get('/alerts', async (c) => {
   }
 });
 
-app.get('/', (c) => c.text('Hello Hono!'));
-
 serve({
   fetch: app.fetch,
   port: 3000
