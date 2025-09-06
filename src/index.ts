@@ -37,13 +37,6 @@ app.get('/alerts', async (c) => {
         },
         {
           id: "4",
-          type: "ROAD_CLOSED",
-          location: { latitude: -21.215, longitude: -47.805 },
-          description: "Rua fechada devido a evento",
-          time: Date.now() - 1000 * 60 * 5
-        },
-        {
-          id: "5",
           type: "WEATHER",
           location: { latitude: -21.220, longitude: -47.810 },
           description: "Chuvas fortes causando lentidão",
