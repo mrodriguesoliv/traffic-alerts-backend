@@ -10,9 +10,6 @@ app.use(cors());
 app.route('/auth', authRoutes);
 app.route('/dashboard', dashboardRoutes);
 
-app.get('/teste', (c) => c.json({ message: 'API is running' }));
-
-
 serve({
   fetch: app.fetch,
   port: 3000
