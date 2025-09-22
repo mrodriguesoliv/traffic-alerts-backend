@@ -88,6 +88,7 @@ Pronto! A API estará rodando em `http://localhost:3000`.
 
 ## 📂 Estrutura do Projeto
 
+```
 src
 ├── config/             # Validação e exportação de variáveis de ambiente
 ├── modules/            # Módulos principais da aplicação (features)
@@ -96,6 +97,7 @@ src
 └── shared/             # Código compartilhado entre módulos
     ├── lib/            # Clientes de bibliotecas (ex: Supabase)
     └── types/          # Tipos e interfaces globais
+```
 
 ## 📜 Endpoints da API
 
