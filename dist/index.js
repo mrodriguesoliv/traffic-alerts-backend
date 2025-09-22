@@ -2,16 +2,12 @@ import 'dotenv/config';
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { authRoutes } from './features/auth/auth.routes.js';
-import { dashboardRoutes } from './features/dashboard/dashboard.routes.js';
-
+import { authRoutes, dashboardRoutes } from './core/routes/routes';
 const app = new Hono();
 app.use(cors());
-
 app.route('/auth', authRoutes);
 app.route('/dashboard', dashboardRoutes);
-
 serve({
-  fetch: app.fetch,
-  port: 3000
+    fetch: app.fetch,
+    port: 3000
 });

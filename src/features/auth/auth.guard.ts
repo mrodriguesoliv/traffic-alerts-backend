@@ -1,5 +1,5 @@
-import type { Context, Next } from "../../../types/types.js";
-import { getSupabaseUserByTokenService } from "./auth.service.js";
+import type { Context, Next } from "../../types/types.js";
+import { getSupabaseUserByTokenService } from "./guard.service.js";
 
 
 export const authGuard = () => {

@@ -1,5 +1,5 @@
 import type { Context } from 'hono';
-import { getDashboardService } from "../services/dashboard.service";
+import { getDashboardService } from "./dashboard.service";
 
 export const getDashboardController = async (c: Context) => {
   try {

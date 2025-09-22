@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import type { Context } from "../../../types/types.js";
+import type { Context } from "../../types/types.js";
 import 'dotenv/config';
 
 export const getSupabaseUserByTokenService = async (token: string, c: Context) => {

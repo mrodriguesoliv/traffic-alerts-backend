@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { loginService } from "../services/auth.service";
+import { loginService } from "./auth.service.js";
 
 export const loginController = async (c: Context) => {
   try {
