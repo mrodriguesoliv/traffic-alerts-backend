@@ -47,56 +47,47 @@ Para executar este projeto localmente, siga os passos abaixo.
 -   [Node.js](https://nodejs.org/) (versão 20.x ou superior)
 -   [pnpm](https://pnpm.io/) (recomendado, mas você pode usar `npm` ou `yarn`)
 
-### Passos
+### **Passos de Instalação**
 
-1.  **Clone o repositório:**
+1.  **Clone o repositório e acesse a pasta:**
     ```bash
     git clone https://github.com/seu-usuario/traffic-alerts-backend.git
-    ```
-    
-2.  **Acesse o diretório do projeto:**
-    ```bash
     cd traffic-alerts-backend
     ```
 
-3. **Instale as Dependências:**
+2.  **Instale as dependências:**
     ```bash
     pnpm install
     ```
 
-4. **Configure as Variáveis de Ambiente**:
-Crie um arquivo chamado .env na raiz do projeto.
+3.  **Configure as variáveis de ambiente:**
+    
+    Crie um arquivo chamado `.env` na raiz do projeto e adicione o seguinte conteúdo:
+    ```dotenv
+    # Supabase
+    SUPABASE_URL="YOUR_SUPABASE_URL"
+    SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
 
-# Supabase
-```env
-SUPABASE_URL="YOUR_SUPABASE_URL"
-SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
-```
+    # Waze/RapidAPI
+    RAPIDAPI_KEY="YOUR_RAPIDAPI_KEY"
+    RAPIDAPI_HOST="waze-alerts-and-jams.p.rapidapi.com"
 
-# Waze/RapidAPI
-```env
-RAPIDAPI_KEY="YOUR_RAPIDAPI_KEY"
-RAPIDAPI_HOST="waze-alerts-and-jams.p.rapidapi.com"
-```
+    # Application
+    PORT=3000
+    USE_MOCK=false # Mude para 'true' para usar dados mockados sem a API real
+    ```
 
-# Application
-```env
-PORT=3000
-USE_MOCK=false # Mude para 'true' para usar dados mockados sem a API real
-```
+4.  **Execute o servidor de desenvolvimento:**
+    
+    O servidor irá iniciar com hot-reload.
+    ```bash
+    pnpm run dev
+    ```
 
-5. **Execute o Servidor de Desenvolvimento**:
-O servidor irá iniciar em modo de desenvolvimento com hot-reload.
-
-```Bash
-pnpm run dev
-```
-
-Pronto! A API estará rodando em http://localhost:3000.
+Pronto! A API estará rodando em `http://localhost:3000`.
 
 ## 📂 Estrutura do Projeto
 
-```
 src
 ├── config/             # Validação e exportação de variáveis de ambiente
 ├── modules/            # Módulos principais da aplicação (features)
@@ -105,28 +96,25 @@ src
 └── shared/             # Código compartilhado entre módulos
     ├── lib/            # Clientes de bibliotecas (ex: Supabase)
     └── types/          # Tipos e interfaces globais
-```
 
-### 📜 Endpoints da API
+## 📜 Endpoints da API
 
-**Autenticação**:
+### Autenticação
 
-```
-POST /auth/login
-Realiza a autenticação do usuário.
-Body: { "email": "user@email.com", "password": "your_password" }
-Retorno: { "token": "jwt_access_token" }
-```
+- `POST /auth/login`
+  - Realiza a autenticação do usuário.
+  - **Body:** `{ "email": "user@email.com", "password": "your_password" }`
+  - **Retorno:** `{ "token": "jwt_access_token" }`
 
-**Dashboard**:
+### Dashboard
 
-```
-GET /dashboard
-Retorna a lista de alertas de tráfego.
-Autenticação: Requer um token JWT no header Authorization: Bearer <token>.
-Retorno: Uma lista de alertas e congestionamentos.
-```
+- `GET /dashboard`
+  - Retorna a lista de alertas de tráfego.
+  - **Autenticação:** Requer um token JWT no header `Authorization: Bearer <token>`.
+  - **Retorno:** Uma lista de alertas e congestionamentos.
+
+---
 
 <p align="center">
-Feito com ❤️ e as melhores tecnologias do ecossistema JS.
+  Feito com ❤️ e as melhores tecnologias do ecossistema JS.
 </p>
